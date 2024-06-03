@@ -255,78 +255,63 @@
 
 })();
 
-function sendEmail(params) {
-  var tempParams = {
-    from_name: document.getElementById("name").value,
-    to_name: document.getElementById("email").value,
-    message: document.getElementById("message").value,
-  };
+emailjs.init("service_do6q27v");
 
-  if (tempParams.from_name == '' || tempParams.to_name == '' || tempParams.message == '') {
-    swal({
-      title: "Fields Empty",
-      text: "Please check the missing field",
-      icon: "warning",
-      button: "OK"
-    });
-    return; // Stop further execution if fields are empty
-  }
+    function sendEMail() {
+      var tempParams = {
+        from_name: document.getElementById("name").value,
+        to_name: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+      };
 
-  emailjs.send('service_do6q27v', 'template_vqpdj5o', tempParams)
-    .then(function(res) {
-      console.log("success", res.status);
-      swal({
-        title: "Your message has been sent. Thank you!",
-        icon: "success"
-      });
+      if(tempParams.from_name === '' || tempParams.to_name === '' || tempParams.message === '') {
+        swal({
+          title: "Fields Empty",
+          text: "Please check the missing field",
+          icon: "warning",
+          button: "OK"
+        });
+        return;
+      }
+
+      emailjs.send('service_do6q27v','template_vqpdj5o',tempParams)
+        .then(function (res){
+          console.log("success", res.status);
+          swal({
+            title: "Your message has been sent. Thank you!",
+            icon: "success"
+          });
+        })
+        .catch(function(error) {
+          console.log("Failed to send email", error);
+          swal({
+            title: "Failed to send email",
+            text: "Please try again later",
+            icon: "error",
+            button: "OK"
+          });
+        });
+
       document.getElementById("name").value = '';
       document.getElementById("email").value = '';
       document.getElementById("message").value = '';
-    }, function(error) {
-      console.log("failed", error);
-      swal({
-        title: "Oops...",
-        text: "Something went wrong while sending your message. Please try again later!",
-        icon: "error",
-        button: "OK"
-      });
-    });
-}
+    }
 
 
-// Funktion zum Drucken der Seite
+/*Funktion zum Drucken der Seite
 function printPage() {
-  var printContent = document.documentElement.outerHTML; // Capture the entire page content
-  var printWindow = window.open('', '', 'height=800,width=800'); // Open a new window
+  window.print();
+}*/
+function printPage() {
+  var pptx = new PptxGenJS();
 
-  printWindow.document.write('<html><head><title>Print Preview</title>');
+  var slide = pptx.addSlide();
+  slide.addText(document.getElementById("name").value, { x: 0.5, y: 0.5, fontSize: 18, color: '363636' });
+  slide.addText(document.getElementById("email").value, { x: 0.5, y: 1.0, fontSize: 18, color: '363636' });
+  slide.addText(document.getElementById("message").value, { x: 0.5, y: 1.5, fontSize: 18, color: '363636' });
 
-  // Copy all stylesheets to the print window
-  var stylesheets = document.querySelectorAll('link[rel="stylesheet"], style');
-  stylesheets.forEach(function(stylesheet) {
-    printWindow.document.write(stylesheet.outerHTML);
-  });
-
-  printWindow.document.write('</head><body>');
-  printWindow.document.write(printContent); // Write the captured content to the new window
-  printWindow.document.write('</body></html>'); // Close the body and HTML tags
-
-  printWindow.document.close(); // Close the document
-  printWindow.focus(); // Focus on the new window
-
-  // Add a delay to ensure content is loaded before printing
-  setTimeout(function() {
-    printWindow.print(); // Trigger the print dialog
-    printWindow.close(); // Close the print window after printing
-  }, 500);
+  pptx.writeFile({ fileName: 'Presentation.pptx' });
 }
-
-
-
-
-
-
-
 
 
 
