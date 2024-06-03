@@ -298,10 +298,8 @@ emailjs.init("service_do6q27v");
     }
 
 
-/*Funktion zum Drucken der Seite
-function printPage() {
-  window.print();
-}*/
+//Funktion zum Drucken der Seite
+
 function printPage() {
   var pptx = new PptxGenJS();
 
