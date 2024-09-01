@@ -128,18 +128,15 @@
   /**
    * Hero type effect
    */
-  const typed = select('.typed')
-  if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
+  var typed = new Typed('.typed', {
+    strings: ['Robotik, Künstliche Intelligenz, Informatik, Softwareentwicklung und Datenerfassung'],
+    typeSpeed: 50,  // Geschwindigkeit des Tippens
+    backSpeed: 100,  // Geschwindigkeit des Rückwärts-Tippens
+    backDelay: 30000,  // Verzögerung nach dem Tippvorgang, bevor der Text rückwärts gelöscht wird
+    loop: true,      // Wiederholt den Text
+  });
+  
+  
 
   /**
    * Skills animation
@@ -299,17 +296,23 @@ emailjs.init("service_do6q27v");
 
 
 //Funktion zum Drucken der Seite
+function createPDF() {
+  // Wählen Sie das gesamte Dokument als PDF
+  const element = document.body; // In diesem Fall wird der gesamte Body als PDF gespeichert
 
-function printPage() {
-  var pptx = new PptxGenJS();
+  // Definieren Sie die Optionen für das PDF
+  const opt = {
+      margin: 1,
+      filename: 'Webseite.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+  };
 
-  var slide = pptx.addSlide();
-  slide.addText(document.getElementById("name").value, { x: 0.5, y: 0.5, fontSize: 18, color: '363636' });
-  slide.addText(document.getElementById("email").value, { x: 0.5, y: 1.0, fontSize: 18, color: '363636' });
-  slide.addText(document.getElementById("message").value, { x: 0.5, y: 1.5, fontSize: 18, color: '363636' });
-
-  pptx.writeFile({ fileName: 'Presentation.pptx' });
+  // PDF generieren und speichern
+  html2pdf().set(opt).from(element).save();
 }
+
 
 
 

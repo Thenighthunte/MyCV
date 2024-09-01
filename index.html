@@ -23,7 +23,8 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
-
+<!-- Fügen Sie diesen Script-Tag am Ende des <body> Ihrer HTML-Datei hinzu -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script type="text/javascript">
   (function() {
@@ -36,23 +37,24 @@
   <!-- Mobile nav toggle button -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-  <!-- Header -->
+    <!-- Header -->
   <header id="header">
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column align-items-center">
 
-      <div class="profile">
-        <img src="assets/img/sasaprofile.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">DJATSA KANTSA VALDO RABELAIS</a></h1>
-        <div class="social-links mt-3 text-center">
+      <div class="profile text-center">
+        <img src="assets/img/sasaprofile.jpg" alt="Profile Image" class="img-fluid rounded-circle mb-3">
+        <h1 class="sitename"><a href="index.html">DJATSA KANTSA VALDO RABELAIS</a></h1>
+        <div class="social-links mt-3">
           <a href="https://github.com/Thenighthunte" class="github"><i class="bx bxl-github"></i></a>
           <a href="https://www.linkedin.com/in/valdo-rabelais-djatsa-kantsa-ba4237268" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
 
-      <nav id="navbar" class="nav-menu navbar">
+      <nav id="navbar" class="nav-menu navbar mt-auto">
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Fähigkeiten</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
@@ -61,11 +63,13 @@
     </div>
   </header>
 
+
   <!-- Hero Section -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1>DJATSA KANTSA VALDO RABELAIS</h1>
-      <p>Ich bin 21 Jahre alt und komme aus Kamerun. Aktuell befinde ich mich im dritten Semester meines Bachelorstudiums im Bereich Internationale Künstliche Intelligenz an der Ostbayerischen Technischen Hochschule Amberg-Weiden.Als engagierter und zielstrebiger Student bringe ich eine ausgeprägte Leidenschaft für analytisches und zielorientiertes Denken mit. Mein Interesse liegt besonders in den neuesten Technologien, insbesondere in den Bereichen <span class="typed" data-typed-items="Robotik, Künstliche Intelligenz, Informatik, Softwareentwicklung und Datenerfassung."></span></p>
+      <h1>DJATSA KANTSA VALDO RABELAIS</h1><br>
+      <br>
+      <p>Ich bin 21 Jahre alt und komme aus Kamerun. Aktuell befinde ich mich im vierten Semester meines Bachelorstudiums im Bereich Internationale Künstliche Intelligenz an der Ostbayerischen Technischen Hochschule Amberg-Weiden.Als engagierter und zielstrebiger Student bringe ich eine ausgeprägte Leidenschaft für analytisches und zielorientiertes Denken mit. Mein Interesse liegt besonders in den neuesten Technologien, insbesondere in den Bereichen <span class="typed" data-typed-items="Robotik, Künstliche Intelligenz, Informatik, Softwareentwicklung und Datenerfassung."></span></p>
     </div>
   </section>
 
@@ -85,7 +89,7 @@
             <img src="assets/img/sasa1.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Student an der Ostbayerischen Technischen Hochschule Amberg-Weiden (2. Semester)</h3>
+            <h3>Student an der Ostbayerischen Technischen Hochschule Amberg-Weiden (4. Semester)</h3>
             <br>
             <br>
             <div class="row">
@@ -108,26 +112,7 @@
       </div>
     </section>
 
-    <!-- Facts Section -->
-    <section id="facts" class="facts">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Facts</h2>
-        </div>
-
-        <div class="row no-gutters">
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects in Bearbeitung</strong><br>2 Public, 3 Private</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
+    
 
     <!-- Skills Section -->
     <section id="skills" class="skills section-bg">
@@ -143,54 +128,84 @@
         <div class="row skills-content">
           <div class="col-lg-6" data-aos="fade-up">
             <div class="progress">
-              <span class="skill">PROCESSING <i class="val">80%</i></span>
+              <span class="skill">C++<i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">Python<i class="val">80%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="progress">
-              <span class="skill">JAVASCRIPT<i class="val">60%</i></span>
+              <span class="skill">Java <i class="val">65%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">JavaScript <i class="val">60%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="progress">
-              <span class="skill">PYTHON <i class="val">60%</i></span>
+              <span class="skill">C<i class="val">50%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="progress">
-              <span class="skill">MATLAB <i class="val">45%</i></span>
+              <span class="skill">Latex <i class="val">50%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">PHP <i class="val">40%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="progress">
-              <span class="skill">C<i class="val">45%</i></span>
+              <span class="skill">Processing<i class="val">80%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="progress">
-              <span class="skill">JAVA <i class="val">30%</i></span>
+              <span class="skill">VBA Excel Kenntnisse<i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">MATLAB<i class="val">60%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">SAP Kenntnisse<i class="val">50%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">SPS Kenntnisse<i class="val">40%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">TYPESCRIPT <i class="val">30%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">PHP <i class="val">10%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">TYPESCRIPT<i class="val">10%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
@@ -203,20 +218,27 @@
         <div class="row skills-content">
           <div class="col-lg-6" data-aos="fade-up">
             <div class="progress">
+              <span class="skill">MS-Excel<i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
               <span class="skill">MS-Office <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-            <div class="progress">
-              <span class="skill">MS-Excel<i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+            
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="progress">
+              <span class="skill">Power Bi <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
             <div class="progress">
               <span class="skill">POWERPOINT<i class="val">80%</i></span>
               <div class="progress-bar-wrap">
@@ -238,6 +260,12 @@
                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
+            <div class="progress">
+              <span class="skill">Javascript<i class="val">50%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
@@ -247,19 +275,7 @@
                 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-            <div class="progress">
-              <span class="skill">Javascript<i class="val">50%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">SAP <i class="val">30%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
+           </div>
         </div>
 
         <div class="section-title">
@@ -359,27 +375,6 @@
               </div>
             </div>
             <div class="progress">
-              <span class="skill">IntelliJ <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Git und Github<i class="val">50%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Notepad++ <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="progress">
               <span class="skill">vuejsstorm <i class="val">50%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -387,6 +382,28 @@
             </div>
             <div class="progress">
               <span class="skill">Pg Admin <i class="val">50%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="progress">
+              <span class="skill">IntelliJ <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            
+            <div class="progress">
+              <span class="skill">Notepad++ <i class="val">60%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">Git und Github<i class="val">50%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -420,7 +437,33 @@
 
       </div>
     </section>
+    <!-- Facts Section -->
+    <section id="facts" class="facts">
+      <div class="container">
 
+        <div class="section-title">
+          <h2>Facts</h2>
+        </div>
+
+        <div class="row no-gutters">
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Projects in Bearbeitung</strong><br>2 Public, 1 Private</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Projects abgeschlossen </strong><br>1 Public, 7 Private</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
     <!-- Resume Section -->
     <section id="resume" class="resume">
       <div class="container">
@@ -430,9 +473,35 @@
         </div>
 
         <div class="row">
-
+          <h3 class="resume-title">Praktische Erfahrungen</h3>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Praktische Erfahrungen</h3>
+            
+            <div class="resume-item">
+              <h4>Entwicklung einer Strategie zur Früherkennung von Schäden im Produktionsbereich(Grammer Project)</h4>
+              <h5>von 14. Mai 2024 bis dato</h5>
+              <br>
+              <p><em><b>Früherkennungsproject</b></em></p>
+              <p><em>Tools</em></p>
+              <ul>
+                <li>Ms Excel</li>
+                <li>Power Bi</li>
+                <li>POWERPOINT</li>
+                <li>Excel VBA Kenntnisse</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Verwalten und Pfelgen einer Webseite (3Es 4Africa Project)</h4>
+              <h5>von 14. Mai 2024 bis dato</h5>
+              <br>
+              <p><em><b> Web-Technologie Project</b></em></p>
+              <p><em>Tools</em></p>
+              <ul>
+                <li>Webtec Kentnisse</li>
+                <li>WordPress</li>
+                <li>PHP</li>
+                
+              </ul>
+            </div>
             <div class="resume-item">
               <h4>Entwicklung und Updating meines Lebenslaufs in Webseitenform (Personal Project)</h4>
               <h5>von 06. Juni 2023 bis dato</h5>
@@ -446,6 +515,56 @@
                 <li>Adobe Acrobat</li>
               </ul>
             </div>
+            <div class="resume-item">
+              <h4>Verarbeitung und Analyse einer Log-Datei von Sensormessungen (Uni Project)</h4>
+              <h5>von 18. Juni 2024 bis 19. Juli 2024</h5>
+              <br>
+              <p><em><b>C++ Project</b></em></p>
+              <p><em>Tools</em></p>
+              <ul>
+                <li>Pycharm</li>
+                <li>C++ Kentnisse</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Entwicklung eines Labyrinths mit dem MazeSystem und das Platzieren von bewegenden Agenten mit Simulation (Uni Project)</h4>
+              <h5>von 25. Mai 2024 bis 28. Juni 2024</h5>
+              <br>
+              <p><em><b>Uni SKI 2Projet" </b></em></p>
+              <p><em>Tools</em></p>
+              <ul>
+                <li>Visual Studio Code</li>
+                <li>Python</li>
+                <li>Maze Kentnisse</li>
+                <li>POWERPOINT</li>
+              </ul>
+            </div>
+            
+            <div class="resume-item">
+              <h4>Entwicklung eines Programms zur Verwaltung des Urlaubs der Mitarbeiter in einer Firma (Uni Project)</h4>
+              <h5>von 01. April 2024 bis 25. Mai 2024</h5>
+              <br>
+              <p><em><b>C++ Project</b></em></p>
+              <p><em>Tools</em></p>
+              <ul>
+                <li>Pycharm</li>
+                <li>C++ Kentnisse</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Entwicklung eines Programms für ein modifiziertes Vier-Gewinnt-Spiel (Uni Project)</h4>
+              <h5>von 16. November 2023 bis 13. Dezember 2023</h5>
+              <br>
+              <p><em><b>Python Project</b></em></p>
+              <p><em>Tools</em></p>
+              <ul>
+                <li>Sypder</li>
+                <li>Python Kentnisse</li>
+              </ul>
+            </div>
+            
+          </div>  
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">  
             <div class="resume-item">
               <h4>Entwicklung einer Webseite zur Bedeutung und Wichtigkeit des Ozeans für die Menschen (Nasa Space App Hackdown Wettbewerb in Deutschland, Brandenburg an der Havel)</h4>
               <h5>von 06. Oktober bis 08. Oktober 2023</h5>
@@ -519,6 +638,7 @@
             </div>
           </div>
 
+          
           <div class="col-lg-6" data-aos="fade-up">
             <br>
             <br>
@@ -527,8 +647,28 @@
             <div class="resume-item">
               <h4>STUDIERENDE INTERNATIONALE KÜNSTLICHE INTELLIGENZ</h4>
               <p><em><b>Ostbayerische Technische Hochschule Amberg-Weiden</b></em></p>
+              <p><em><b>4. Semester</b></em></p>
+              <h5>4. Oktober 2024  - dato</h5>
+              <ul>
+                <li>Algorithmen und Datenstrukturen</li>
+                <li>Computernetzwerke</li>
+                <li>Data Engineering & Data Analytics</li>
+                <li>Mathematik 3</li>
+                <li>Programmieren 3 (Java)</li>
+                <li>Software Engineering 1</li>
+              </ul>
+              <p><em><b>3. Semester</b></em></p>
+              <h5>15. März 2024 - 30 Juli 2024</h5>
+              <ul>
+                <li>Symbolische Künstliche Intelligenz 2 </li>
+                <li>Programmieren für KI 2 (C ++)</li>
+                <li>Datenbanksysteme</li>
+                <li>Stochastik</li>
+                <li>Foreign Langauge 2</li>
+
+              </ul>
               <p><em><b>2. Semester</b></em></p>
-              <h5>4. Oktober - dato</h5>
+              <h5>4. Oktober - 30 Januar 2024</h5>
               <ul>
                 <li>Symbolische Künstliche Intelligenz 1 (Logik & Semantik)</li>
                 <li>Programmieren für KI 1 (Python)</li>
@@ -548,6 +688,14 @@
                 <li>International Affairs and Intercultural Meeting</li>
               </ul>
             </div>
+          </div>  
+          <div class="col-lg-6" data-aos="fade-up">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
             <div class="resume-item">
               <h4>Gymnasium in Kamerun</h4>
               <p><em><b>Jesus and Mary College und Government Bilingual High School Mbalyngong</b></em></p>
@@ -560,92 +708,113 @@
               <h5>September 2005 - Juli 2013</h5>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6" data-aos="fade-up">
-          <br>
-          <br>
-          <br>
+          
 
-          <h3 class="resume-title">Sonstige Bildungsweg</h3>
-          <div class="resume-item">
-            <h5>Online Lernplattform Simplelearn</h5>
-            <ul>
-              <li>Einführung im Verlauf Künstliche Intelligenz</li>
-            </ul>
+
+          <div class="col-lg-6" data-aos="fade-up">
+            <br>
+            <br>
+            <br>
+            <h3 class="resume-title">Sonstige Bildungsweg</h3>
+            <div class="resume-item">
+              <h5>Online Grammer Lernplattform </h5>
+              <ul>
+                <li>Supplier Data Process (SAP)</li>
+                <li>Wie man innovativ, kreativ und anders denkt</li>
+                <li>Power BI Top Skills</li>
+                <li>Information Security</li>
+                <li>Powerpoint-Gestaltung</li>
+                <li>Efective Meetings</li>
+                <li>Arbeitszeit effizient verwalten</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h5>Online Lernplattform Simplelearn</h5>
+              <ul>
+                <li>Einführung im Verlauf Künstliche Intelligenz</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h5>Etablissement Patrick-Ko in Jaunde, Kamerun</h5>
+              <ul>
+                <li>Praktikum als Bürosekretär</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h5>MIMO</h5>
+              <p>Teilnahme an Online HTML und Java Kursen</p>
+            </div>
+            <div class="resume-item">
+              <h5>Private Sprach- und Wirtschaftsschule RAHN in Kaiserslautern</h5>
+              <p>Teilnahme an der Mittelstufe (B2)/DSH Vorbereitungskurs</p>
+            </div>
+            <div class="resume-item">
+              <h5>TU Kaiserslautern</h5>
+              <p>Online Abendkurs Deutsch als Fremdsprache für die DSH Prüfung</p>
+            </div>
+            <div class="resume-item">
+              <h5>Goethe Institut Jaunde, Kamerun</h5>
+              <p>Teilnahme an den B1 und B2 Deutsch Prüfungen</p>
+            </div>
+            <div class="resume-item">
+              <h5>OSD Kamerun Jaunde</h5>
+              <p>Teilnahme an den A1, A2, B1 Deutschkursen</p>
+            </div>
           </div>
-          <div class="resume-item">
-            <h5>Etablissement Patrick-Ko in Jaunde, Kamerun</h5>
-            <ul>
-              <li>Praktikum als Bürosekretär</li>
-            </ul>
-          </div>
-          <div class="resume-item">
-            <h5>MIMO</h5>
-            <p>Teilnahme an Online HTML und Java Kursen</p>
-          </div>
-          <div class="resume-item">
-            <h5>Private Sprach- und Wirtschaftsschule RAHN in Kaiserslautern</h5>
-            <p>Teilnahme an der Mittelstufe (B2)/DSH Vorbereitungskurs</p>
-          </div>
-          <div class="resume-item">
-            <h5>TU Kaiserslautern</h5>
-            <p>Online Abendkurs Deutsch als Fremdsprache für die DSH Prüfung</p>
-          </div>
-          <div class="resume-item">
-            <h5>Goethe Institut Jaunde, Kamerun</h5>
-            <p>Teilnahme an den B1 und B2 Deutsch Prüfungen</p>
-          </div>
-          <div class="resume-item">
-            <h5>OSD Kamerun Jaunde</h5>
-            <p>Teilnahme an den A1, A2, B1 Deutschkursen</p>
+          <div class="col-lg-6" data-aos="fade-up">
+            <br>
+            <br>
+            <br>
+            <h3 class="resume-title">Berufserfahrungen</h3>
+            <div class="resume-item">
+              <h5>Grammer AG Amberg</h5>
+              <ul>
+                <li>Werkstudent  Customer Quality & Warranty</Q></li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h5>Siemens AG Amberg</h5>
+              <ul>
+                <li>Ferienmitarbeiter</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h5>MERCEDES Rastatt</h5>
+              <ul>
+                <li>Montagehelfer</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h5>Riva Restaurant Amberg</h5>
+              <p>Barkeeper</p>
+            </div>
+            <div class="resume-item">
+              <h5>Kredler Bäckerei Amberg</h5>
+              <p>Aushilfe bei der Bäckerei</p>
+            </div>
+            <div class="resume-item">
+              <h5>Blaumond GMBH</h5>
+              <p>Servicekraft, Kassierer und Promoter bei Messen in Nürnburg</p>
+            </div>
+            <div class="resume-item">
+              <h5>Eventas</h5>
+              <p>Leihmitarbeiter als Servicekraft für Able bei der Messe in München</p>
+            </div>
+            <div class="resume-item">
+              <h5>Kühl und Nagel (AC & Co) KG Duisburg</h5>
+              <p>Lagerhelfer</p>
+            </div>
+            <div class="resume-item">
+              <h5>Kühl und Nagel (AC & Co) KG Rennord</h5>
+              <p>Lagerhelfer</p>
+            </div>
+            <div class="resume-item">
+              <h5>AgenturVier</h5>
+              <p>Servicemitarbeiter für Hochzeiten und Events</p>
+            </div>
           </div>
         </div>
-        <div class="col-lg-6" data-aos="fade-up">
-          <br>
-          <br>
-          <br>
-          <h3 class="resume-title">Berufserfahrungen</h3>
-          <div class="resume-item">
-            <h5>Siemens AG Amberg</h5>
-            <ul>
-              <li>Ferienmitarbeiter</li>
-            </ul>
-          </div>
-          <div class="resume-item">
-            <h5>MERCEDES Rastatt</h5>
-            <ul>
-              <li>Montagehelfer</li>
-            </ul>
-          </div>
-          <div class="resume-item">
-            <h5>Riva Restaurant Amberg</h5>
-            <p>Barkeeper</p>
-          </div>
-          <div class="resume-item">
-            <h5>Kredler Bäckerei Amberg</h5>
-            <p>Aushilfe bei der Bäckerei</p>
-          </div>
-          <div class="resume-item">
-            <h5>Blaumond GMBH</h5>
-            <p>Servicekraft, Kassierer und Promoter bei Messen in Nürnburg</p>
-          </div>
-          <div class="resume-item">
-            <h5>Eventas</h5>
-            <p>Leihmitarbeiter als Servicekraft für Able bei der Messe in München</p>
-          </div>
-          <div class="resume-item">
-            <h5>Kühl und Nagel (AC & Co) KG Duisburg</h5>
-            <p>Lagerhelfer</p>
-          </div>
-          <div class="resume-item">
-            <h5>Kühl und Nagel (AC & Co) KG Rennord</h5>
-            <p>Lagerhelfer</p>
-          </div>
-          <div class="resume-item">
-            <h5>AgenturVier</h5>
-            <p>Servicemitarbeiter für Hochzeiten und Events</p>
-          </div>
-        </div>
+        
 
       </div>
     </section>
@@ -662,20 +831,19 @@
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-angular">Angular</li>
-              <li data-filter=".filter-react">React</li>
-              <li data-filter=".filter-vuejs">Vuejs</li>
-              <li data-filter=".filter-java">JavaScript</li>
-              <li data-filter=".filter-php">Php</li>
-              <li data-filter=".filter-sap">Sap</li>
-              <li data-filter=".filter-javascript">Html/Javascript/CSS</li>
-              <li data-filter=".filter-spring">Spring Boot</li>
+              <li data-filter=".filter-angular">Riva Project</li>
+              <li data-filter=".filter-react">The Ocean Project</li>
+              <li data-filter=".filter-vuejs">Grammer Online Kurs</li>
+              <li data-filter=".filter-java">Simplelearn</li>
+              <li data-filter=".filter-php">Nasa Space App</li>
+              <li data-filter=".filter-sap">Vier Gewint Spiele</li>
+              <li data-filter=".filter-javascript">Labyrinths in MazeSystem</li>
             </ul>
           </div>
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-4 col-md-6 portfolio-item filter-angular">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-php">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/17.png" class="img-fluid" alt="">
               <div class="portfolio-links">
@@ -684,7 +852,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-angular">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-java">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/18.png" class="img-fluid" alt="">
               <div class="portfolio-links">
@@ -693,7 +861,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-vuejs">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-angular">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/1.png" class="img-fluid" alt="">
               <div class="portfolio-links">
@@ -713,11 +881,11 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-javascript">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-vuejs">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/5.png" class="img-fluid" alt="">
+              <img src="assets\img\portfolio\wie man kreativ.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/5.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Das Projekt wurde mit Javascript entwickelt. Mit dieser Anwendung ist es möglich zu berechnen"><i class="bx bx-plus"></i></a>
+                <a href="assets\img\portfolio\wie man kreativ.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Das Projekt wurde mit Javascript entwickelt. Mit dieser Anwendung ist es möglich zu berechnen"><i class="bx bx-plus"></i></a>
                 <a href="https://github.com/Thenighthunte" title="Project link"><i class="bx bxl-github"></i></a>
               </div>
             </div>
@@ -732,7 +900,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-php">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-angular">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/3.png" class="img-fluid" alt="">
               <div class="portfolio-links">
@@ -742,61 +910,61 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-javascript">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-vuejs">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/6.png" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/Inforamtion.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/6.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Das Projekt wurde in Javascript entwickelt. Es präsentiert ein Dashboard für den Administrator."><i class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/Inforamtion.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Das Projekt wurde in Javascript entwickelt. Es präsentiert ein Dashboard für den Administrator."><i class="bx bx-plus"></i></a>
                 <a href="https://github.com/Thenighthunte" title="More Details"><i class="bx bxl-github"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-javascript">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-vuejs">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/7.png" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/Arbeitszeit.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/7.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Shop App ist eine Anwendung, die ich mit Javascript entwickelt habe. Durch diese WebApp ist es möglich, Artikel zu verkaufen. Zum Beispiel Artikel in den Warenkorb legen."><i class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/Arbeitszeit.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Shop App ist eine Anwendung, die ich mit Javascript entwickelt habe. Durch diese WebApp ist es möglich, Artikel zu verkaufen. Zum Beispiel Artikel in den Warenkorb legen."><i class="bx bx-plus"></i></a>
                 <a href="https://github.com/Thenighthunte" title="Project link"><i class="bx bxl-github"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-angular">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-vuejs">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/8.png" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/SAP.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/8.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Die Anwendung wurde mit Angular entwickelt, das Ziel ist es, Aufgaben zu erstellen, und wenn man eine Aufgabe erledigt hat, kann man sie mit done markieren."><i class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/SAP.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Die Anwendung wurde mit Angular entwickelt, das Ziel ist es, Aufgaben zu erstellen, und wenn man eine Aufgabe erledigt hat, kann man sie mit done markieren."><i class="bx bx-plus"></i></a>
                 <a href="https://github.com/Thenighthunte" title="Project link"><i class="bx bxl-github"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-spring">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-vuejs">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/12.png" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/Power Bi.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/12.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Das Projekt wurde mit Spring und Angular, MySQL realisiert. Es ging darum, einen UserManager zu implementieren. Wo man neue Benutzer hinzufügen, löschen, ändern kann."><i class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/Power Bi.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Das Projekt wurde mit Spring und Angular, MySQL realisiert. Es ging darum, einen UserManager zu implementieren. Wo man neue Benutzer hinzufügen, löschen, ändern kann."><i class="bx bx-plus"></i></a>
                 <a href="https://github.com/Thenighthunte" title="Project link"><i class="bx bxl-github"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-angular">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-vuejs">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/13.png" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/PowerPoint.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/13.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Diese Anwendung wurde mit Angular entwickelt. Diese Anwendung führt eine lexikalische Analyse von Sätzen mit Hilfe von Spacy."><i class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/PowerPoint.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Diese Anwendung wurde mit Angular entwickelt. Diese Anwendung führt eine lexikalische Analyse von Sätzen mit Hilfe von Spacy."><i class="bx bx-plus"></i></a>
                 <a href="https://github.com/" title="Project link"><i class="bx bxl-github"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-java">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-vuejs">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/14.png" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/Erste Hilfe Kurs.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/14.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Diese Anwendung wurde mit Java entwickelt. Es wurde eine CSV-Datei eingelesen, die die Note (Note zwischen 0 und 100) aller Schüler auswählt. Das Ziel war es, die CSV-Datei zu filtern."><i class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/Erste Hilfe Kurs.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Diese Anwendung wurde mit Java entwickelt. Es wurde eine CSV-Datei eingelesen, die die Note (Note zwischen 0 und 100) aller Schüler auswählt. Das Ziel war es, die CSV-Datei zu filtern."><i class="bx bx-plus"></i></a>
                 <a href="https://github.com/" title="Project link"><i class="bx bxl-github"></i></a>
               </div>
             </div>
@@ -812,46 +980,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-java">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/16.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/16.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Diese Anwendung ist in Java geschrieben. Sie zeigt eine Dateiübertragung zwischen dem Client und dem Server. Der Client kann Dateien auf dem Server legen, hochladen oder löschen."><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/" title="Project link"><i class="bx bxl-github"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-angular">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/9.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/9.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Shop App ist eine Anwendung, die ich mit Angular entwickelt habe. Durch diese WebApp ist es möglich, Artikel zu verkaufen. Zum Beispiel Artikel in den Warenkorb legen, kaufen."><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/Thenighthunte" title="Project link"><i class="bx bxl-github"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-sap">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/10.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/10.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Die Anwendung Lieferanten ist eine, die ich mit SAPUI5 entwickelt habe. Mit dieser Anwendung erhält man alle Lieferanten unserer Northwind-Services und ihre entsprechende Anzahl an Produkten. Wenn man auf einen Anbieter klickt, erhält man weitere Details zu diesem Anbieter und zu allen Produkten, die er hat. Wenn man auf ein Produkt klickt, erhält man alle wichtigen Informationen zu diesem Produkt."><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/Thenighthunte" title="Project link"><i class="bx bxl-github"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-java">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/11.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/11.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Das Projekt wurde mit Java entwickelt. Das Ziel war, die Noten der Studenten zu bewerten. Beispielsweise werden die Liste aller Fächer und die entsprechenden Noten, der Durchschnitt der Ergebnisse in Prozent, alle bestandenen Prüfungen und die Anzahl der nicht bestandenen Prüfungen angezeigt."><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/Thenighthunte" title="Project link"><i class="bx bxl-github"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+    
       </div>
     </section>
 
@@ -914,85 +1043,91 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
+      <section id="contact" class="contact">
+        <div class="container">
 
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
+          <div class="section-title">
+            <h2>Contact</h2>
+          </div>
 
-        <div class="row" data-aos="fade-in">
+          <div class="row" data-aos="fade-in">
 
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <ul>
-                  <li>Steinhofgasse 3</li>
-                  <li>92224 Amberg</li>
-                </ul>
+            <div class="col-lg-5 d-flex align-items-stretch">
+              <div class="info">
+                <!-- Flexbox Container for Alignment -->
+                <div class="contact-details">
+                  <div class="address">
+                    <i class="bi bi-geo-alt"></i>
+                    <h4>Location:</h4>
+                    <p>Steinhofgasse 3<br>92224 Amberg</p>
+                  </div>
+
+                  <div class="email">
+                    <i class="bi bi-envelope"></i>
+                    <h4>Email:</h4>
+                    <p>djatsavaldo@gmail.com<br>valdorabelais@gmail.com</p>
+                  </div>
+
+                  <div class="phone">
+                    <i class="bi bi-phone"></i>
+                    <h4>Call:</h4>
+                    <p>+49 1777481233</p>
+                  </div>
+                </div>
+                
+                <!-- Google Maps Embed -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.133745624097!2d11.853145215593283!3d49.443575679348204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a1b28c5c60b11b%3A0x1234567890abcdef!2sSteinhofgasse%203%2C%2092224%20Amberg!5e0!3m2!1sen!2sde!4v1693458934873"
+                        frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
               </div>
+            </div>
 
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <ul>
-                  <li>djatsavaldo@gmail.com</li>
-                  <li>valdorabelais@gmail.com</li>
-                </ul>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+49 1777481233</p>
-              </div>
-              <iframe src="https://www.google.com/maps/@49.4435757,11.8551062,17z?entry=ttu" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+              <form action="send_email.php" method="post" class="php-email-form">
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="name">Your Name <span>*</span></label>
+                    <input type="text" name="name" class="form-control" id="name" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="email">Your Email <span>*</span></label>
+                    <input type="email" class="form-control" name="email" id="email" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message <span>*</span></label>
+                  <textarea class="form-control" id="message" name="message" rows="10" required></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+              
             </div>
 
           </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form  class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name <span>*</span></label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="email">Your Email <span>*</span></label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="message">Message <span>*</span></label>
-                <textarea class="form-control" id="message" name="message" rows="10" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit" onclick="sendEMail()">Send Message</button></div>
-            </form>
-          </div>
-
         </div>
+      </section>
 
-      </div>
-    </section>
 
   </main>
+  
 
-  <!-- Footer -->
+    <!-- Footer -->
   <footer id="footer">
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>Valdo Djatsa</span></strong>
-        <p align="center"></p><button onclick="printPage()">Drucken</button></p>
+      </div>
+      <!-- Button zum Erstellen einer PDF-Datei -->
+      <div class="print-button-container" style="text-align: center; margin-top: 10px;">
+        <button id="print-button" onclick="createPDF()">Drucken als PDF</button>
       </div>
     </div>
   </footer>
+
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

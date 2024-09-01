@@ -7,7 +7,7 @@
 
 /*--------------------------------------------------------------
 # General
---------------------------------------------------------------*/
+-------------------------------------a-------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 24px;
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: 700;
   -moz-text-align-last: center;
   text-align-last: center;
   font-family: "Poppins", sans-serif;
@@ -204,10 +204,16 @@ h1, h2, h3, h4, h5, h6 {
   background: url("../img/hero-bg.jpg") top center;
   position: relative;
   color: #fff;
-  text-align:center;
+  text-align: center;
   background-size: cover;
-  padding: auto;
+  display: flex;
+  justify-content: flex-start; /* Inhalt nach links ausrichten */
+  align-items: center; /* Inhalt vertikal zentrieren */
+  padding-left: 21%; /* Mehr Padding links hinzufügen, z.B. auf 5% reduziert, um den Inhalt näher an den linken Rand zu bringen */
+  padding-right: 0; /* Rechtes Padding auf 0 lassen */
+  flex-direction: column; /* Inhalt vertikal stapeln */
 }
+
 #hero:before {
   content: "";
   background: rgba(5, 13, 24, 0.3);
@@ -218,11 +224,13 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   z-index: 1;
 }
+
 #hero .hero-container {
   position: relative;
   z-index: 2;
   min-width: 300px;
 }
+
 #hero h1 {
   margin: 0 0 10px 0;
   font-size: 64px;
@@ -230,34 +238,40 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 56px;
   color: #fff;
 }
+
 #hero p {
   color: #fff;
   margin-bottom: 50px;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
 }
+
 #hero p span {
   color: #fff;
   padding-bottom: 4px;
   letter-spacing: 1px;
-  border-bottom: 3px solid #149ddd;
+  border-bottom: 1px solid none;
 }
+
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
   }
 }
+
 @media (max-width: 768px) {
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
   }
+
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Sections General
@@ -285,7 +299,11 @@ section {
 }
 
 .section-title p {
-  margin-bottom: 0;
+  font-size: 18px;
+  color: #070707;
+  padding-bottom: 4px;
+  letter-spacing: 1px;
+
 }
 /*--------------------------------------------------------------
 # About
@@ -385,7 +403,7 @@ section {
   font-style: normal;
 }
 .skills .progress-bar-wrap {
-  background: #dce8f8;
+  background: #ffffff;
   height: 10px;
 }
 .skills .progress-bar {
@@ -452,9 +470,39 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+/* Portfolio Section Styles */
 .portfolio .portfolio-item {
   margin-bottom: 30px;
+  width: calc(33.333% - 20px); /* Adjust width to create three items per row with equal spacing */
+  float: left; /* Aligns the items side-by-side */
+  position: relative; /* Needed for proper positioning of child elements */
+  overflow: hidden; /* Ensures images do not overflow their container */
+  box-sizing: border-box; /* Includes padding and border in the width calculation */
 }
+
+.portfolio .portfolio-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Creates a square aspect ratio */
+  overflow: hidden;
+  z-index: 1;
+}
+
+.portfolio .portfolio-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+  transition: transform 0.3s ease;
+}
+
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Portfolio Filter Styles */
 .portfolio #portfolio-flters {
   padding: 0;
   margin: 0 auto 35px auto;
@@ -464,6 +512,7 @@ section {
   border-radius: 50px;
   padding: 2px 15px;
 }
+
 .portfolio #portfolio-flters li {
   cursor: pointer;
   display: inline-block;
@@ -476,18 +525,16 @@ section {
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
 }
-.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
   color: #149ddd;
 }
+
 .portfolio #portfolio-flters li:last-child {
   margin-right: 0;
 }
-.portfolio .portfolio-wrap {
-  transition: 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
+
 .portfolio .portfolio-wrap::before {
   content: "";
   background: rgba(255, 255, 255, 0.5);
@@ -500,6 +547,7 @@ section {
   z-index: 2;
   opacity: 0;
 }
+
 .portfolio .portfolio-wrap .portfolio-links {
   opacity: 1;
   left: 0;
@@ -511,6 +559,7 @@ section {
   display: flex;
   justify-content: center;
 }
+
 .portfolio .portfolio-wrap .portfolio-links a {
   color: #fff;
   font-size: 28px;
@@ -519,12 +568,15 @@ section {
   transition: 0.3s;
   width: 50%;
 }
+
 .portfolio .portfolio-wrap .portfolio-links a:hover {
   background: rgba(20, 157, 221, 0.95);
 }
+
 .portfolio .portfolio-wrap .portfolio-links a + a {
   border-left: 1px solid #37b3ed;
 }
+
 .portfolio .portfolio-wrap:hover::before {
   top: 0;
   left: 0;
@@ -532,10 +584,12 @@ section {
   bottom: 0;
   opacity: 1;
 }
+
 .portfolio .portfolio-wrap:hover .portfolio-links {
   opacity: 1;
   bottom: 0;
 }
+
 
 /*--------------------------------------------------------------
 # Portfolio Details
@@ -972,6 +1026,19 @@ section {
   cursor: pointer;
 }
 
-.mobile-nav-active #header {
-  left: 0;
+/* Styles for print */
+@media print {
+  #header, #navbar, #footer, #print-button {
+    display: none; /* Hide elements like navigation and print button itself */
+  }
+
+  .portfolio .portfolio-item {
+    width: 100%; /* Make portfolio items full width when printing */
+    margin-bottom: 20px; /* Add space between items */
+  }
+
+  .portfolio .portfolio-wrap img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
 }
