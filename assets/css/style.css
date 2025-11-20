@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 250px;
   transition: all ease-in-out 0.5s;
   z-index: 9997;
   transition: all 0.5s;
@@ -116,12 +116,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #main {
-  margin-left: 300px;
+  margin-left: 250px;
 }
 
 @media (max-width: 1199px) {
   #header {
-    left: -300px;
+    left: -250px;
   }
 
   #main {
@@ -154,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 15px;
 }
 .nav-menu a i, .nav-menu a:focus i {
-  font-size: 24px;
+  font-size: 20px;
   padding-right: 8px;
   color: #6f7180;
 }
@@ -169,7 +169,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
-  right: 15px;
+  right: 10px;
   top: 15px;
   z-index: 9998;
   border: 0;
@@ -984,7 +984,7 @@ section {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 250px;
   z-index: 9999;
   background: #040b14;
 }
